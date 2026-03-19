@@ -10,17 +10,21 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href="mailto:rajeshchittyal21@gmail.com" data-cursor="disable">
-                rajeshchittyal21@gmail.com
+              <a href="mailto:pmeet4771@gmail.com" data-cursor="disable">
+                pmeet4771@gmail.com
               </a>
             </p>
+            <h4>Phone</h4>
+            <p>+91 9106948211</p>
+            <h4>Location</h4>
+            <p>Kanjinagar, Motived, Surat</p>
             <h4>Education</h4>
-            <p>BSc in Computer Science</p>
+            <p>Computer Science — Shree Ram Krishna Institute of Technology (2019-2022)</p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com/raxx21"
+              href="#"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -28,7 +32,7 @@ const Contact = () => {
               Github <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com/in/rajesh-chityal-2a70141b3"
+              href="#"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -36,7 +40,7 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="https://x.com/raxx21_official"
+              href="#"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -44,7 +48,7 @@ const Contact = () => {
               Twitter <MdArrowOutward />
             </a>
             <a
-              href="https://www.instagram.com/therajeshchityal"
+              href="#"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -54,7 +58,7 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Rajesh Chityal</span>
+              Designed and Developed <br /> by <span>Meet Patel</span>
             </h2>
             <h5>
               <MdCopyright /> 2025

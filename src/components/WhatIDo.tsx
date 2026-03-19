@@ -90,19 +90,19 @@ const WhatIDo = () => {
               <h3>FRONTEND</h3>
               <h4>Building Interactive UIs</h4>
               <p>
-                Crafting performant, responsive interfaces with modern frameworks.
-                From SPAs to micro-frontends, I deliver pixel-perfect experiences.
+                Crafting responsive, user-friendly interfaces with modern frameworks
+                and tools. Delivering clean UI/UX with attention to detail.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">React.js</div>
                 <div className="what-tags">Angular</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">Material UI</div>
                 <div className="what-tags">HTML5</div>
+                <div className="what-tags">JavaScript</div>
+                <div className="what-tags">jQuery</div>
                 <div className="what-tags">CSS3</div>
+                <div className="what-tags">SCSS</div>
+                <div className="what-tags">Tailwind CSS</div>
+                <div className="what-tags">WordPress</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -129,19 +129,19 @@ const WhatIDo = () => {
               <h3>BACKEND</h3>
               <h4>Scalable Server Architecture</h4>
               <p>
-                Designing robust APIs and microservices. From CMS platforms to
-                complex business logic, I build backends that scale.
+                Building robust server-side applications and APIs using PHP frameworks
+                and Node.js. Experienced in efficient backend architecture and data handling.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
+                <div className="what-tags">PHP</div>
+                <div className="what-tags">CakePHP</div>
+                <div className="what-tags">CodeIgniter</div>
+                <div className="what-tags">Laravel</div>
                 <div className="what-tags">Node.js</div>
-                <div className="what-tags">NestJS</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">MongoDB</div>
+                <div className="what-tags">MySQL</div>
                 <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">Microservices</div>
-                <div className="what-tags">Python</div>
+                <div className="what-tags">GIT</div>
               </div>
               <div className="what-arrow"></div>
             </div>
