@@ -1,37 +1,30 @@
 import { useEffect, useState } from "react";
 import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
-
 import Marquee from "react-fast-marquee";
 
-const Loading = ({ percent }: { percent: number }) => {
+const Loading = () => {
   const { setIsLoading } = useLoading();
   const [loaded, setLoaded] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [clicked, setClicked] = useState(false);
 
-  if (percent >= 100) {
-    setTimeout(() => {
+  useEffect(() => {
+    // Simulate brief loading then transition
+    const timer = setTimeout(() => {
       setLoaded(true);
       setTimeout(() => {
-        setIsLoaded(true);
-      }, 1000);
-    }, 600);
-  }
-
-  useEffect(() => {
-    import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
         setClicked(true);
         setTimeout(() => {
-          if (module.initialFX) {
+          import("./utils/initialFX").then((module) => {
             module.initialFX();
-          }
-          setIsLoading(false);
+            setIsLoading(false);
+          });
         }, 900);
-      }
-    });
-  }, [isLoaded]);
+      }, 1000);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const { currentTarget: target } = e;
@@ -75,7 +68,7 @@ const Loading = ({ percent }: { percent: number }) => {
             <div className="loading-container">
               <div className="loading-content">
                 <div className="loading-content-in">
-                  Loading <span>{percent}%</span>
+                  Welcome
                 </div>
               </div>
               <div className="loading-box"></div>
@@ -91,35 +84,3 @@ const Loading = ({ percent }: { percent: number }) => {
 };
 
 export default Loading;
-
-export const setProgress = (setLoading: (value: number) => void) => {
-  let percent: number = 0;
-
-  function update(value: number) {
-    if (value > percent) {
-      percent = Math.min(value, 100);
-      setLoading(percent);
-    }
-  }
-
-  // Fetch progress maps to 0-90%, remaining 10% is for GLTF parse + GPU compile
-  function setFetchProgress(fetchPercent: number) {
-    update(Math.round(fetchPercent * 0.9));
-  }
-
-  function loaded() {
-    return new Promise<number>((resolve) => {
-      const interval = setInterval(() => {
-        if (percent < 100) {
-          percent++;
-          setLoading(percent);
-        } else {
-          resolve(percent);
-          clearInterval(interval);
-        }
-      }, 5);
-    });
-  }
-
-  return { loaded, setFetchProgress };
-};
