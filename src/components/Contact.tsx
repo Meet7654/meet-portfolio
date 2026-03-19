@@ -23,14 +23,14 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h4>Social</h4>
-            <a
-              href="https://github.com/Meet7654"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Github <MdArrowOutward />
-            </a>
+            {/*<a*/}
+            {/*  href="https://github.com/Meet7654"*/}
+            {/*  target="_blank"*/}
+            {/*  data-cursor="disable"*/}
+            {/*  className="contact-social"*/}
+            {/*>*/}
+            {/*  Github <MdArrowOutward />*/}
+            {/*</a>*/}
             <a
               href="https://www.linkedin.com/in/patel-meet-15242b257/"
               target="_blank"

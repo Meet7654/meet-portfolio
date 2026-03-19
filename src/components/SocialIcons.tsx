@@ -65,33 +65,22 @@ const SocialIcons = () => {
   return (
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
+        {/*<span>*/}
+        {/*  <a href="#" target="_blank">*/}
+        {/*    <FaGithub />*/}
+        {/*  </a>*/}
+        {/*</span>*/}
         <span>
-          <a href="#" target="_blank">
-            <FaGithub />
-          </a>
-        </span>
-        <span>
-          <a href="#" target="_blank">
+          <a href="https://www.linkedin.com/in/patel-meet-15242b257/" target="_blank">
             <FaLinkedinIn />
           </a>
         </span>
         <span>
-          <a href="#" target="_blank">
-            <FaXTwitter />
-          </a>
-        </span>
-        <span>
-          <a href="#" target="_blank">
+          <a href="https://www.instagram.com/meet_17_09" target="_blank">
             <FaInstagram />
           </a>
         </span>
       </div>
-      <a className="resume-button" href="#">
-        <HoverLinks text="RESUME" />
-        <span>
-          <TbNotes />
-        </span>
-      </a>
     </div>
   );
 };

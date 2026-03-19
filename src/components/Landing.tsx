@@ -31,7 +31,7 @@ const Landing = () => {
           </h2>
         </div>
         <div className="mobile-social">
-          <a href="https://github.com/Meet7654" target="_blank" aria-label="Github"><FaGithub /></a>
+          {/*<a href="https://github.com/Meet7654" target="_blank" aria-label="Github"><FaGithub /></a>*/}
           <a href="https://www.linkedin.com/in/patel-meet-15242b257" target="_blank" aria-label="LinkedIn"><FaLinkedinIn /></a>
           <a href="https://www.instagram.com/meet_17_09" target="_blank" aria-label="Instagram"><FaInstagram /></a>
         </div>
