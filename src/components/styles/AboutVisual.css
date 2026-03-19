@@ -1,0 +1,177 @@
+.about-visual {
+  display: none;
+}
+
+.code-window {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(165deg, #0d1117 0%, #111827 100%);
+  border: 1px solid rgba(94, 234, 212, 0.1);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(34, 211, 238, 0.05);
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Title bar */
+.code-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.code-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.code-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.code-dot-red {
+  background: #ff5f57;
+}
+.code-dot-yellow {
+  background: #ffbd2e;
+}
+.code-dot-green {
+  background: #28c840;
+}
+
+.code-filename {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+  font-family: "Geist", sans-serif;
+}
+
+/* Code body */
+.code-body {
+  padding: 16px 0;
+}
+
+.code-line {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  opacity: 0;
+  animation: codeFadeIn 0.5s ease forwards;
+  transition: background 0.2s;
+}
+
+.code-line:hover {
+  background: rgba(94, 234, 212, 0.03);
+}
+
+@keyframes codeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.code-linenum {
+  width: 28px;
+  text-align: right;
+  margin-right: 16px;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Syntax colors */
+.code-keyword {
+  color: #c678dd;
+}
+
+.code-fn {
+  color: #61afef;
+}
+
+.code-op {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.code-bracket {
+  color: #e5c07b;
+}
+
+.code-prop {
+  color: #e06c75;
+}
+
+.code-string {
+  color: #98c379;
+}
+
+/* Blinking cursor */
+.code-cursor-line {
+  opacity: 1 !important;
+}
+
+.code-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: #5eead4;
+  animation: cursorBlink 1s step-end infinite;
+  vertical-align: middle;
+  border-radius: 1px;
+}
+
+@keyframes cursorBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Desktop: show on the left side */
+@media only screen and (min-width: 1025px) {
+  .about-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    height: 100%;
+  }
+
+  .code-window {
+    max-width: 440px;
+    font-size: 13.5px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .code-window {
+    max-width: 480px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .code-window {
+    max-width: 520px;
+    font-size: 15px;
+  }
+}

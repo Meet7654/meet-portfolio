@@ -1,4 +1,5 @@
 import "./styles/Landing.css";
+import LandingVisual from "./LandingVisual";
 
 const Landing = () => {
   return (
@@ -12,6 +13,7 @@ const Landing = () => {
             <span>PATEL</span>
           </h1>
         </div>
+        <LandingVisual />
         <div className="landing-info">
           <h3>A Full Stack</h3>
           <h2 className="landing-info-h2">
