@@ -13,12 +13,13 @@ const setCharacter = (
   dracoLoader.setDecoderPath("/draco/");
   loader.setDRACOLoader(dracoLoader);
 
-  const loadCharacter = () => {
+  const loadCharacter = (onProgress?: (percent: number) => void) => {
     return new Promise<GLTF | null>(async (resolve, reject) => {
       try {
         const encryptedBlob = await decryptFile(
           "/models/character.enc?v=2",
-          "Character3D#@"
+          "Character3D#@",
+          onProgress
         );
         const blobUrl = URL.createObjectURL(new Blob([encryptedBlob]));
 

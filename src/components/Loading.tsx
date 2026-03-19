@@ -95,32 +95,21 @@ export default Loading;
 export const setProgress = (setLoading: (value: number) => void) => {
   let percent: number = 0;
 
-  let interval = setInterval(() => {
-    if (percent <= 50) {
-      let rand = Math.round(Math.random() * 5);
-      percent = percent + rand;
+  function update(value: number) {
+    if (value > percent) {
+      percent = Math.min(value, 100);
       setLoading(percent);
-    } else {
-      clearInterval(interval);
-      interval = setInterval(() => {
-        percent = percent + Math.round(Math.random());
-        setLoading(percent);
-        if (percent > 91) {
-          clearInterval(interval);
-        }
-      }, 2000);
     }
-  }, 100);
+  }
 
-  function clear() {
-    clearInterval(interval);
-    setLoading(100);
+  // Fetch progress maps to 0-90%, remaining 10% is for GLTF parse + GPU compile
+  function setFetchProgress(fetchPercent: number) {
+    update(Math.round(fetchPercent * 0.9));
   }
 
   function loaded() {
     return new Promise<number>((resolve) => {
-      clearInterval(interval);
-      interval = setInterval(() => {
+      const interval = setInterval(() => {
         if (percent < 100) {
           percent++;
           setLoading(percent);
@@ -128,8 +117,9 @@ export const setProgress = (setLoading: (value: number) => void) => {
           resolve(percent);
           clearInterval(interval);
         }
-      }, 2);
+      }, 5);
     });
   }
-  return { loaded, percent, clear };
+
+  return { loaded, setFetchProgress };
 };
