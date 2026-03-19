@@ -1,0 +1,5 @@
+/draco/*.js
+  Content-Type: application/javascript
+
+/draco/*.wasm
+  Content-Type: application/wasm
