@@ -34,11 +34,11 @@ const setCharacter = (
 
                 // Change clothing colors to match site theme
                 if (mesh.material) {
-                  if (mesh.name === "BODY.SHIRT") { // The shirt mesh
+                  if (mesh.name === "Wolf3D_Outfit_Top") {
                     const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
                     newMat.color = new THREE.Color("#8B4513");
                     mesh.material = newMat;
-                  } else if (mesh.name === "Pant") {
+                  } else if (mesh.name === "Wolf3D_Outfit_Bottom") {
                     const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
                     newMat.color = new THREE.Color("#000000");
                     mesh.material = newMat;
@@ -53,8 +53,8 @@ const setCharacter = (
             resolve(gltf);
             setCharTimeline(character, camera);
             setAllTimeline();
-            character!.getObjectByName("footR")!.position.y = 3.36;
-            character!.getObjectByName("footL")!.position.y = 3.36;
+            character!.getObjectByName("RightFoot")!.position.y = 3.36;
+            character!.getObjectByName("LeftFoot")!.position.y = 3.36;
 
             // Monitor scale is handled by GsapScroll.ts animations
 

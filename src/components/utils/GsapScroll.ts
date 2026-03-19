@@ -60,7 +60,7 @@ export function setCharTimeline(
       screenLight = object;
     }
   });
-  let neckBone = character?.getObjectByName("spine005");
+  let neckBone = character?.getObjectByName("Neck");
   if (window.innerWidth > 1024) {
     if (character) {
       tl1
