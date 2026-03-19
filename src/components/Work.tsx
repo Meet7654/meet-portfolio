@@ -7,18 +7,24 @@ const projects = [
   {
     title: "HRM System",
     category: "Employee Management",
+    description:
+      "A comprehensive Human Resource Management system for managing employee records, attendance tracking, leave management, and payroll processing. Built with a scalable backend and cloud storage integration.",
     tools: "CodeIgniter, AWS S3, MySQL",
     image: "/images/Solidx.webp",
   },
   {
     title: "Twinr",
     category: "Mobile App Integration",
+    description:
+      "A platform that converts WordPress websites into native mobile applications with seamless Firebase integration, real-time push notifications, and cross-platform compatibility.",
     tools: "WordPress, Firebase, Push Notifications",
     image: "/images/radix.webp",
   },
   {
     title: "NGO Platform",
     category: "Non-Profit Operations",
+    description:
+      "A full-featured platform for non-profit organizations to manage donors, volunteers, events, and campaigns. Includes a dynamic dashboard with analytics and reporting capabilities.",
     tools: "Angular, Node.js, MySQL",
     image: "/images/bond.webp",
   },
@@ -58,7 +64,6 @@ const Work = () => {
         </h2>
 
         <div className="carousel-wrapper">
-          {/* Navigation Arrows */}
           <button
             className="carousel-arrow carousel-arrow-left"
             onClick={goToPrev}
@@ -76,7 +81,6 @@ const Work = () => {
             <MdArrowForward />
           </button>
 
-          {/* Slides */}
           <div className="carousel-track-container">
             <div
               className="carousel-track"
@@ -96,9 +100,18 @@ const Work = () => {
                         <p className="carousel-category">
                           {project.category}
                         </p>
+                        <p className="carousel-description">
+                          {project.description}
+                        </p>
                         <div className="carousel-tools">
                           <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
+                          <div className="carousel-tools-list">
+                            {project.tools.split(", ").map((tool, i) => (
+                              <span className="carousel-tool-tag" key={i}>
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -111,13 +124,11 @@ const Work = () => {
             </div>
           </div>
 
-          {/* Dot Indicators */}
           <div className="carousel-dots">
             {projects.map((_, index) => (
               <button
                 key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
+                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""}`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to project ${index + 1}`}
                 data-cursor="disable"

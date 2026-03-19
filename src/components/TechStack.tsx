@@ -168,6 +168,14 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
   );
 }
 
+const techNames = [
+  "Angular", "React", "TypeScript", "JavaScript", "Next.js",
+  "Node.js", "PHP", "Laravel", "CakePHP", "CodeIgniter",
+  "MySQL", "MongoDB", "PostgreSQL", "Express", "jQuery",
+  "HTML5", "CSS3", "SCSS", "Tailwind CSS", "WordPress",
+  "Docker", "AWS", "Git", "Nginx", "GitHub Actions", "CI/CD", "Linux",
+];
+
 const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
@@ -213,7 +221,18 @@ const TechStack = () => {
   return (
     <div className="techstack">
       <h2> My Techstack</h2>
-
+      <div className="tech-list-bg">
+        <div className="tech-list-col">
+          {techNames.slice(0, Math.ceil(techNames.length / 2)).map((name, i) => (
+            <span className="tech-list-item" key={i}>{name}</span>
+          ))}
+        </div>
+        <div className="tech-list-col">
+          {techNames.slice(Math.ceil(techNames.length / 2)).map((name, i) => (
+            <span className="tech-list-item" key={i}>{name}</span>
+          ))}
+        </div>
+      </div>
       <Canvas
         shadows
         gl={{ alpha: true, stencil: false, depth: false, antialias: false }}

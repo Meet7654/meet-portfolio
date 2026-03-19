@@ -24,7 +24,7 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="#"
+              href="https://github.com/Meet7654"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -32,7 +32,7 @@ const Contact = () => {
               Github <MdArrowOutward />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/patel-meet-15242b257/"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -40,15 +40,7 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="#"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-            <a
-              href="#"
+              href="https://www.instagram.com/meet_17_09/"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -61,7 +53,7 @@ const Contact = () => {
               Designed and Developed <br /> by <span>Meet Patel</span>
             </h2>
             <h5>
-              <MdCopyright /> 2025
+              <MdCopyright /> 2026
             </h5>
           </div>
         </div>
