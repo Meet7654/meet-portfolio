@@ -223,12 +223,17 @@ const TechStack = () => {
       <h2> My Techstack</h2>
       <div className="tech-list-bg">
         <div className="tech-list-col">
-          {techNames.slice(0, Math.ceil(techNames.length / 2)).map((name, i) => (
+          {techNames.slice(0, 9).map((name, i) => (
+            <span className="tech-list-item" key={i}>{name}</span>
+          ))}
+        </div>
+        <div className="tech-list-col tech-list-col-center">
+          {techNames.slice(9, 18).map((name, i) => (
             <span className="tech-list-item" key={i}>{name}</span>
           ))}
         </div>
         <div className="tech-list-col">
-          {techNames.slice(Math.ceil(techNames.length / 2)).map((name, i) => (
+          {techNames.slice(18).map((name, i) => (
             <span className="tech-list-item" key={i}>{name}</span>
           ))}
         </div>
