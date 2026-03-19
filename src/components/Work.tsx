@@ -8,19 +8,19 @@ const projects = [
     title: "HRM System",
     category: "Employee Management",
     tools: "CodeIgniter, AWS S3, MySQL",
-    image: "/images/Solidx.png",
+    image: "/images/Solidx.webp",
   },
   {
     title: "Twinr",
     category: "Mobile App Integration",
     tools: "WordPress, Firebase, Push Notifications",
-    image: "/images/radix.png",
+    image: "/images/radix.webp",
   },
   {
     title: "NGO Platform",
     category: "Non-Profit Operations",
     tools: "Angular, Node.js, MySQL",
-    image: "/images/bond.png",
+    image: "/images/bond.webp",
   },
 ];
 
