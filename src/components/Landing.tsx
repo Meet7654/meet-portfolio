@@ -1,5 +1,11 @@
 import "./styles/Landing.css";
 import LandingVisual from "./LandingVisual";
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 const Landing = () => {
   return (
@@ -24,6 +30,12 @@ const Landing = () => {
             <div className="landing-h2-info">Engineer</div>
             <div className="landing-h2-info-1">Developer</div>
           </h2>
+        </div>
+        <div className="mobile-social">
+          <a href="#" target="_blank" aria-label="Github"><FaGithub /></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><FaLinkedinIn /></a>
+          <a href="#" target="_blank" aria-label="Twitter"><FaXTwitter /></a>
+          <a href="#" target="_blank" aria-label="Instagram"><FaInstagram /></a>
         </div>
       </div>
     </div>

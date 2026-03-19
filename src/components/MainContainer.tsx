@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
+import MobileTechStack from "./MobileTechStack";
 import setSplitText from "./utils/splitText";
 import { setAllTimeline } from "./utils/GsapScroll";
 
@@ -45,10 +46,12 @@ const MainContainer = () => {
             <WhatIDo />
             <Career />
             <Work />
-            {isDesktopView && (
+            {isDesktopView ? (
               <Suspense fallback={<div>Loading....</div>}>
                 <TechStack />
               </Suspense>
+            ) : (
+              <MobileTechStack />
             )}
             <Contact />
           </div>

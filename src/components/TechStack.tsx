@@ -16,12 +16,61 @@ const imageUrls = [
   "/images/node2.webp",
   "/images/mysql.webp",
   "/images/javascript.webp",
+  "/images/react.webp",
+  "/images/typescript.webp",
+  "/images/next.webp",
+  "/images/mongo.webp",
+  "/images/express.webp",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+const imageTextures = imageUrls.map((url) => textureLoader.load(url));
+
+function createTextTexture(label: string, bg: string, fg: string) {
+  const size = 512;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+
+  // Background circle
+  ctx.fillStyle = bg;
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Text
+  ctx.fillStyle = fg;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  const fontSize = label.length > 6 ? 72 : label.length > 4 ? 88 : 110;
+  ctx.font = `bold ${fontSize}px "Geist", Arial, sans-serif`;
+  ctx.fillText(label, size / 2, size / 2);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
+
+const generatedTextures = [
+  createTextTexture("Angular", "#DD0031", "#fff"),
+  createTextTexture("PHP", "#777BB4", "#fff"),
+  createTextTexture("Laravel", "#FF2D20", "#fff"),
+  createTextTexture("CSS3", "#264de4", "#fff"),
+  createTextTexture("SCSS", "#CD6799", "#fff"),
+  createTextTexture("Docker", "#2496ED", "#fff"),
+  createTextTexture("AWS", "#FF9900", "#232F3E"),
+  createTextTexture("Nginx", "#009639", "#fff"),
+  createTextTexture("Git", "#F05032", "#fff"),
+  createTextTexture("jQuery", "#0769AD", "#fff"),
+  createTextTexture("PgSQL", "#336791", "#fff"),
+  createTextTexture("HTML5", "#E34F26", "#fff"),
+  createTextTexture("TW", "#06B6D4", "#fff"),
+];
+
+const textures = [...imageTextures, ...generatedTextures];
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
+const spheres = [...Array(40)].map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 

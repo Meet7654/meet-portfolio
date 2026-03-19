@@ -14,6 +14,38 @@
   max-width: var(--cMaxWidth);
 }
 
+/* Mobile social icons */
+.mobile-social {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 18px;
+  z-index: 10;
+}
+
+.mobile-social a {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mobile-social a:hover,
+.mobile-social a:active {
+  color: var(--accentColor);
+  border-color: rgba(94, 234, 212, 0.3);
+  transform: scale(1.1);
+}
+
 .landing-circle1 {
   top: 0%;
   left: 0%;
@@ -213,6 +245,12 @@ h2.landing-info-h2 {
 
   h2.landing-info-h2 {
     font-size: 55px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .mobile-social {
+    display: none;
   }
 }
 

@@ -1,12 +1,11 @@
 .visual-container {
   position: absolute;
-  width: 320px;
-  height: 320px;
-  top: 50%;
+  width: 200px;
+  height: 200px;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  display: none;
 }
 
 /* Core avatar */
@@ -15,8 +14,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
 }
 
 .visual-avatar {
@@ -36,7 +35,7 @@
 
 .visual-initials {
   font-family: "Geist", sans-serif;
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: 3px;
   background: linear-gradient(135deg, #5eead4, #22d3ee);
@@ -47,14 +46,8 @@
 }
 
 @keyframes initialsPulse {
-  0%, 100% {
-    opacity: 0.8;
-    filter: brightness(1);
-  }
-  50% {
-    opacity: 1;
-    filter: brightness(1.3);
-  }
+  0%, 100% { opacity: 0.8; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.3); }
 }
 
 /* Rotating rings */
@@ -65,14 +58,14 @@
 }
 
 .visual-ring-1 {
-  inset: -25px;
+  inset: -15px;
   border-color: rgba(94, 234, 212, 0.15);
   border-top-color: rgba(94, 234, 212, 0.5);
   animation: ringRotate 8s linear infinite;
 }
 
 .visual-ring-2 {
-  inset: -50px;
+  inset: -35px;
   border-color: rgba(34, 211, 238, 0.08);
   border-bottom-color: rgba(34, 211, 238, 0.35);
   border-left-color: rgba(34, 211, 238, 0.2);
@@ -80,16 +73,14 @@
 }
 
 .visual-ring-3 {
-  inset: -80px;
+  inset: -55px;
   border-color: rgba(94, 234, 212, 0.05);
   border-right-color: rgba(94, 234, 212, 0.2);
   animation: ringRotate 18s linear infinite;
 }
 
 @keyframes ringRotate {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 /* Orbiting code symbols */
@@ -104,14 +95,14 @@
 .visual-symbol {
   position: absolute;
   font-family: "Geist", monospace;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 500;
   white-space: nowrap;
   color: rgba(94, 234, 212, 0.7);
   text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
   background: rgba(15, 23, 42, 0.6);
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 3px 7px;
+  border-radius: 5px;
   border: 1px solid rgba(94, 234, 212, 0.15);
   backdrop-filter: blur(4px);
 }
@@ -120,7 +111,7 @@
   animation: orbit1 10s linear infinite;
 }
 .visual-orbit-1 .visual-symbol {
-  transform: translate(-50%, -50%) translateY(-130px);
+  transform: translate(-50%, -50%) translateY(-85px);
   animation: counterRotate 10s linear infinite;
 }
 
@@ -128,7 +119,7 @@
   animation: orbit2 14s linear infinite;
 }
 .visual-orbit-2 .visual-symbol {
-  transform: translate(-50%, -50%) translateY(-105px);
+  transform: translate(-50%, -50%) translateY(-70px);
   animation: counterRotate2 14s linear infinite;
 }
 
@@ -136,7 +127,7 @@
   animation: orbit3 11s linear infinite;
 }
 .visual-orbit-3 .visual-symbol {
-  transform: translate(-50%, -50%) translateY(-155px);
+  transform: translate(-50%, -50%) translateY(-98px);
   animation: counterRotate3 11s linear infinite;
 }
 
@@ -145,8 +136,8 @@
   to { transform: rotate(360deg); }
 }
 @keyframes counterRotate {
-  from { transform: translate(-50%, -50%) translateY(-130px) rotate(0deg); }
-  to { transform: translate(-50%, -50%) translateY(-130px) rotate(-360deg); }
+  from { transform: translate(-50%, -50%) translateY(-85px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) translateY(-85px) rotate(-360deg); }
 }
 
 @keyframes orbit2 {
@@ -154,8 +145,8 @@
   to { transform: rotate(480deg); }
 }
 @keyframes counterRotate2 {
-  from { transform: translate(-50%, -50%) translateY(-105px) rotate(-120deg); }
-  to { transform: translate(-50%, -50%) translateY(-105px) rotate(-480deg); }
+  from { transform: translate(-50%, -50%) translateY(-70px) rotate(-120deg); }
+  to { transform: translate(-50%, -50%) translateY(-70px) rotate(-480deg); }
 }
 
 @keyframes orbit3 {
@@ -163,8 +154,8 @@
   to { transform: rotate(600deg); }
 }
 @keyframes counterRotate3 {
-  from { transform: translate(-50%, -50%) translateY(-155px) rotate(-240deg); }
-  to { transform: translate(-50%, -50%) translateY(-155px) rotate(-600deg); }
+  from { transform: translate(-50%, -50%) translateY(-98px) rotate(-240deg); }
+  to { transform: translate(-50%, -50%) translateY(-98px) rotate(-600deg); }
 }
 
 /* Floating particles */
@@ -178,8 +169,8 @@
 
 .visual-particle {
   position: absolute;
-  width: 3px;
-  height: 3px;
+  width: 2px;
+  height: 2px;
   border-radius: 50%;
   background: #5eead4;
   transform: rotate(var(--angle)) translateY(var(--distance));
@@ -222,21 +213,15 @@
 .visual-line-4 { top: 80%; animation-delay: 3s; }
 
 @keyframes lineScan {
-  0%, 100% {
-    opacity: 0;
-    transform: translateX(-30%);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(30%);
-  }
+  0%, 100% { opacity: 0; transform: translateX(-30%); }
+  50% { opacity: 1; transform: translateX(30%); }
 }
 
 /* Glow underneath */
 .visual-glow {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 160px;
+  height: 160px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -30%);
@@ -247,47 +232,78 @@
 }
 
 @keyframes glowPulse {
-  0%, 100% {
-    opacity: 0.5;
-    transform: translate(-50%, -30%) scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: translate(-50%, -30%) scale(1.15);
-  }
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -30%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -30%) scale(1.15); }
 }
 
-/* Mobile: show below landing text */
+/* ---- Breakpoints ---- */
+
 @media screen and (min-width: 500px) {
   .visual-container {
-    display: block;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
+    top: 42%;
   }
+
+  .visual-core { width: 100px; height: 100px; }
+  .visual-initials { font-size: 28px; }
+  .visual-symbol { font-size: 12px; padding: 3px 8px; }
+
+  .visual-ring-1 { inset: -20px; }
+  .visual-ring-2 { inset: -42px; }
+  .visual-ring-3 { inset: -68px; }
+
+  .visual-orbit-1 .visual-symbol { transform: translate(-50%, -50%) translateY(-110px); }
+  .visual-orbit-2 .visual-symbol { transform: translate(-50%, -50%) translateY(-88px); }
+  .visual-orbit-3 .visual-symbol { transform: translate(-50%, -50%) translateY(-130px); }
+
+  @keyframes counterRotate {
+    from { transform: translate(-50%, -50%) translateY(-110px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) translateY(-110px) rotate(-360deg); }
+  }
+  @keyframes counterRotate2 {
+    from { transform: translate(-50%, -50%) translateY(-88px) rotate(-120deg); }
+    to { transform: translate(-50%, -50%) translateY(-88px) rotate(-480deg); }
+  }
+  @keyframes counterRotate3 {
+    from { transform: translate(-50%, -50%) translateY(-130px) rotate(-240deg); }
+    to { transform: translate(-50%, -50%) translateY(-130px) rotate(-600deg); }
+  }
+
+  .visual-glow { width: 200px; height: 200px; }
 }
 
 @media screen and (min-width: 768px) {
-  .visual-container {
-    width: 400px;
-    height: 400px;
+  .visual-container { width: 380px; height: 380px; }
+  .visual-core { width: 130px; height: 130px; }
+  .visual-initials { font-size: 36px; }
+  .visual-symbol { font-size: 14px; padding: 4px 10px; }
+
+  .visual-ring-1 { inset: -25px; }
+  .visual-ring-2 { inset: -50px; }
+  .visual-ring-3 { inset: -80px; }
+
+  .visual-orbit-1 .visual-symbol { transform: translate(-50%, -50%) translateY(-130px); }
+  .visual-orbit-2 .visual-symbol { transform: translate(-50%, -50%) translateY(-105px); }
+  .visual-orbit-3 .visual-symbol { transform: translate(-50%, -50%) translateY(-150px); }
+
+  @keyframes counterRotate {
+    from { transform: translate(-50%, -50%) translateY(-130px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) translateY(-130px) rotate(-360deg); }
+  }
+  @keyframes counterRotate2 {
+    from { transform: translate(-50%, -50%) translateY(-105px) rotate(-120deg); }
+    to { transform: translate(-50%, -50%) translateY(-105px) rotate(-480deg); }
+  }
+  @keyframes counterRotate3 {
+    from { transform: translate(-50%, -50%) translateY(-150px) rotate(-240deg); }
+    to { transform: translate(-50%, -50%) translateY(-150px) rotate(-600deg); }
   }
 
-  .visual-symbol {
-    font-size: 15px;
-    padding: 5px 12px;
-  }
-
-  .visual-core {
-    width: 140px;
-    height: 140px;
-  }
-
-  .visual-initials {
-    font-size: 38px;
-  }
+  .visual-glow { width: 250px; height: 250px; }
 }
 
-/* Desktop: center between the two text blocks */
+/* Desktop */
 @media screen and (min-width: 1025px) {
   .visual-container {
     width: 420px;
@@ -297,58 +313,43 @@
     z-index: 5;
   }
 
-  .visual-core {
-    width: 150px;
-    height: 150px;
-  }
-
-  .visual-initials {
-    font-size: 42px;
-  }
+  .visual-core { width: 150px; height: 150px; }
+  .visual-initials { font-size: 42px; }
+  .visual-symbol { font-size: 14px; padding: 4px 10px; }
+  .visual-particle { width: 3px; height: 3px; }
 
   .visual-ring-1 { inset: -30px; }
   .visual-ring-2 { inset: -60px; }
   .visual-ring-3 { inset: -95px; }
 
-  .visual-orbit-1 .visual-symbol {
-    transform: translate(-50%, -50%) translateY(-155px);
-  }
-  .visual-orbit-3 .visual-symbol {
-    transform: translate(-50%, -50%) translateY(-180px);
-  }
+  .visual-orbit-1 .visual-symbol { transform: translate(-50%, -50%) translateY(-155px); }
+  .visual-orbit-2 .visual-symbol { transform: translate(-50%, -50%) translateY(-120px); }
+  .visual-orbit-3 .visual-symbol { transform: translate(-50%, -50%) translateY(-180px); }
 
   @keyframes counterRotate {
     from { transform: translate(-50%, -50%) translateY(-155px) rotate(0deg); }
     to { transform: translate(-50%, -50%) translateY(-155px) rotate(-360deg); }
   }
-
+  @keyframes counterRotate2 {
+    from { transform: translate(-50%, -50%) translateY(-120px) rotate(-120deg); }
+    to { transform: translate(-50%, -50%) translateY(-120px) rotate(-480deg); }
+  }
   @keyframes counterRotate3 {
     from { transform: translate(-50%, -50%) translateY(-180px) rotate(-240deg); }
     to { transform: translate(-50%, -50%) translateY(-180px) rotate(-600deg); }
   }
+
+  .visual-glow { width: 280px; height: 280px; }
 }
 
 @media screen and (min-width: 1600px) {
-  .visual-container {
-    width: 500px;
-    height: 500px;
-  }
-
-  .visual-core {
-    width: 170px;
-    height: 170px;
-  }
-
-  .visual-initials {
-    font-size: 48px;
-  }
+  .visual-container { width: 500px; height: 500px; }
+  .visual-core { width: 170px; height: 170px; }
+  .visual-initials { font-size: 48px; }
 
   .visual-ring-1 { inset: -35px; }
   .visual-ring-2 { inset: -70px; }
   .visual-ring-3 { inset: -110px; }
 
-  .visual-glow {
-    width: 350px;
-    height: 350px;
-  }
+  .visual-glow { width: 350px; height: 350px; }
 }
